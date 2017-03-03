@@ -116,7 +116,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = sourceType
-        pickerController.allowsEditing = true
+        pickerController.allowsEditing = false
         return pickerController
     }
     
@@ -186,7 +186,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(controller, animated: true, completion: nil)
         
         // save meme (UIActivityViewController completionWithItemsHandler)
-        controller.completionWithItemsHandler = { activity, success, items, error in
+        // handler reads (activity, success, items, error)
+        controller.completionWithItemsHandler = { (_, success, _, _) in
             if success {
                 self.save(memedImage: memedImage)
                 // dismiss activity view
