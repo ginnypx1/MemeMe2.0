@@ -1,0 +1,1 @@
+MemeMe is a meme-generating app developed as part of the Udacity iOS Development Nanodegree. This is version 1.0.
