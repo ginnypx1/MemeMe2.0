@@ -75,16 +75,12 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // transitions to the editor controller with current memes details
-        let editorController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        // transitions to the detail controller with current memes details
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         // pass in info about current meme
         let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
-        if let topText = meme.topText, let bottomText = meme.bottomText {
-            editorController.topText = topText
-            editorController.bottomText = bottomText
-            editorController.image = meme.originalImage
-        }
-        navigationController!.pushViewController(editorController, animated: true)
+        detailController.meme = meme
+        navigationController!.pushViewController(detailController, animated: true)
     }
     
     // MARK: - Animation

@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 struct Meme {
-    var topText: String?
-    var bottomText: String?
+    let topText: String?
+    let bottomText: String?
     var fontName: String = "Impact"
-    var originalImage: UIImage
-    var memedImage: UIImage
+    let originalImage: UIImage
+    let memedImage: UIImage
 }
 
 

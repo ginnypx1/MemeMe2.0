@@ -1,1 +1,42 @@
 MemeMe 2.0
+
+Initial Review 3/9/17:
+
+Requires Changes: 
+
+General: 7/8
+There's no Meme Detail page
+-- I somehow misunderstood that the meme detail page wasn't the meme editor. I have now added this page to the project, along with a segue so you can edit the meme from the meme detail page.
+
+Meme Editor: 13/13
+
+Sent Memes: 2/4
+There is supposed to be a meme detail view to display the memes. I have now made that change.
+The detail slides in from right to left, with a back arrow in the top left corner to lead back to the table collection view. That has been added along with the specific meme detail page.
+
+Code Review Comments:
+
+MemeTextFieldDelegate.swift:
+line 32 - Awesome! For abstracting the repetitive code to set up the various attributes of the top and bottom text.
+
+MemeEditorImagePickerDelegateExtension.swift:
+line 14 - Awesome! For abstracting the repetitive code to chose an image, either from the Camera or Album.
+
+MemeModel.swift:
+line 17 - suggestion: you should consider converting all these five variables into constants. I have now made that change.
+*** MY NOTE: fontName needs to be a var in order for the meme to have a default Impact font but allow the user to change it ***
+
+MemeMeEditorViewController:
+line 78 - Awesome! NicelyDone (re: showToolbars function)
+
+MemeEditorKeyboardExtension.swift:
+line 21 - Suggestion: No need to have an else if statement in here... also a better way to slide up view is
+func keyboardWillShow(_ notification: Notification) {
+    if bottomTextField.isFirstResponder {
+        view.frame.origin.y = getKeyboardHeight(notification) * (-1)
+    }
+}
+I have now made this change.
+
+MemeCollectionViewController.swift:
+line 53 - Awesome! The flow layout looks good.

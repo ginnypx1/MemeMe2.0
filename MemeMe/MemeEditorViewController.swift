@@ -38,8 +38,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // set up the style of textFields
-        memeTextFieldDelegate.setUpTextField(topTextField, label: topText)
-        memeTextFieldDelegate.setUpTextField(bottomTextField, label: bottomText)
+        memeTextFieldDelegate.setUpTextField(topTextField, label: topText, fontName: selectedFont)
+        memeTextFieldDelegate.setUpTextField(bottomTextField, label: bottomText, fontName: selectedFont)
         // add image if there is one
         if self.image != nil {
             imageView.image = image

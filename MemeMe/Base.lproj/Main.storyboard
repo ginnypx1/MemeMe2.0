@@ -96,13 +96,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-bc-7Wz">
-                                                    <rect key="frame" x="126" y="8" width="178" height="104"/>
+                                                    <rect key="frame" x="126" y="8" width="178" height="103.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iqU-t9-Io3">
-                                                    <rect key="frame" x="2" y="89" width="116" height="15"/>
+                                                    <rect key="frame" x="2" y="88.5" width="116" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="iHO-Dl-Nga"/>
                                                     </constraints>
@@ -158,7 +158,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mNy-OV-LHK">
                             <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEditorFromTableView" id="eNC-Pv-zG9"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEditorFromTableView" id="KET-Z4-DhZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -276,7 +276,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eFK-z8-zA6">
                             <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEditorFromCollectionView" id="C2a-dY-dYh"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEditorFromCollectionView" id="Dsw-eV-bth"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -288,6 +288,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmQ-2i-Quh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-678.75" y="-1227.5"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="y3d-LP-74T">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="Z99-SP-MLT" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ULz-kt-2Ml"/>
+                        <viewControllerLayoutGuide type="bottom" id="4QI-HT-1Nt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wZO-rJ-ubY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-aX-E0q">
+                                <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jgt-aX-E0q" secondAttribute="height" multiplier="1:1" id="bxs-Nf-KKF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byV-fq-TFy">
+                                <rect key="frame" x="16" y="120" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Ry-1N-SK4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEH-HM-tMJ">
+                                <rect key="frame" x="16" y="320" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xjo-qn-eGp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="centerX" secondItem="wZO-rJ-ubY" secondAttribute="centerX" id="FNo-v6-yKi"/>
+                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="leading" secondItem="wZO-rJ-ubY" secondAttribute="leadingMargin" id="Fj0-Y3-ADA"/>
+                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="width" secondItem="wZO-rJ-ubY" secondAttribute="width" id="LDv-8H-ffw"/>
+                            <constraint firstItem="byV-fq-TFy" firstAttribute="leading" secondItem="wZO-rJ-ubY" secondAttribute="leadingMargin" id="dKl-hF-bEM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="byV-fq-TFy" secondAttribute="trailing" id="iFT-Ae-3Wt"/>
+                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="trailing" secondItem="wZO-rJ-ubY" secondAttribute="trailingMargin" id="uFS-5V-ZXo"/>
+                            <constraint firstItem="byV-fq-TFy" firstAttribute="top" secondItem="Jgt-aX-E0q" secondAttribute="top" constant="40" id="vb9-c7-57G"/>
+                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="bottom" secondItem="Jgt-aX-E0q" secondAttribute="bottom" constant="-40" id="w00-vm-5w7"/>
+                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="centerY" secondItem="wZO-rJ-ubY" secondAttribute="centerY" id="zLM-l6-eyG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTextLabel" destination="XEH-HM-tMJ" id="aJ2-WO-df8"/>
+                        <outlet property="imageView" destination="Jgt-aX-E0q" id="6FA-OW-w9x"/>
+                        <outlet property="topTextLabel" destination="byV-fq-TFy" id="n2c-lG-cPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXf-VE-tHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="-520"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -431,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="-823"/>
+            <point key="canvasLocation" x="159" y="-1210"/>
         </scene>
     </scenes>
     <resources>
@@ -439,6 +499,6 @@
         <image name="tableImage" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eNC-Pv-zG9"/>
+        <segue reference="Dsw-eV-bth"/>
     </inferredMetricsTieBreakers>
 </document>

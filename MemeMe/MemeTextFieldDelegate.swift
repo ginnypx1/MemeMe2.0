@@ -29,11 +29,12 @@ class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
         return true
     }
     
-    func setUpTextField(_ textField: UITextField, label: String) {
+    func setUpTextField(_ textField: UITextField, label: String, fontName: String) {
         // sets the properties of a textField
         textField.delegate = self
         textField.text = label
         textField.returnKeyType = UIReturnKeyType.done
+        memeTextAttributes.updateValue(UIFont(name: fontName, size: 40)!, forKey: NSFontAttributeName)
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = NSTextAlignment.center
     }
