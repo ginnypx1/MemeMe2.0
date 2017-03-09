@@ -13,8 +13,6 @@ class MemeDetailViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var topTextLabel: UILabel!
-    @IBOutlet weak var bottomTextLabel: UILabel!
 
     // MARK: - Properties
     
@@ -27,10 +25,8 @@ class MemeDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Load the meme
-        if let meme = meme, let topText = meme.topText, let bottomText = meme.bottomText {
-            topTextLabel?.attributedText = memeTextFieldDelegate.setLabelFont(text: topText, meme: meme, fontSize: 40.0)
-            bottomTextLabel?.attributedText = memeTextFieldDelegate.setLabelFont(text: bottomText, meme: meme, fontSize: 40.0)
-            imageView.image = meme.originalImage
+        if let meme = meme {
+            imageView.image = meme.memedImage
         }
         
         // Load edit button

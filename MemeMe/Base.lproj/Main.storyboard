@@ -301,48 +301,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-aX-E0q">
-                                <rect key="frame" x="0.0" y="80" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Jgt-aX-E0q" secondAttribute="height" multiplier="1:1" id="bxs-Nf-KKF"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-aX-E0q">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byV-fq-TFy">
-                                <rect key="frame" x="16" y="120" width="288" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5Ry-1N-SK4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEH-HM-tMJ">
-                                <rect key="frame" x="16" y="320" width="288" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="xjo-qn-eGp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="centerX" secondItem="wZO-rJ-ubY" secondAttribute="centerX" id="FNo-v6-yKi"/>
-                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="leading" secondItem="wZO-rJ-ubY" secondAttribute="leadingMargin" id="Fj0-Y3-ADA"/>
-                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="width" secondItem="wZO-rJ-ubY" secondAttribute="width" id="LDv-8H-ffw"/>
-                            <constraint firstItem="byV-fq-TFy" firstAttribute="leading" secondItem="wZO-rJ-ubY" secondAttribute="leadingMargin" id="dKl-hF-bEM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="byV-fq-TFy" secondAttribute="trailing" id="iFT-Ae-3Wt"/>
-                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="trailing" secondItem="wZO-rJ-ubY" secondAttribute="trailingMargin" id="uFS-5V-ZXo"/>
-                            <constraint firstItem="byV-fq-TFy" firstAttribute="top" secondItem="Jgt-aX-E0q" secondAttribute="top" constant="40" id="vb9-c7-57G"/>
-                            <constraint firstItem="XEH-HM-tMJ" firstAttribute="bottom" secondItem="Jgt-aX-E0q" secondAttribute="bottom" constant="-40" id="w00-vm-5w7"/>
-                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="centerY" secondItem="wZO-rJ-ubY" secondAttribute="centerY" id="zLM-l6-eyG"/>
+                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="leading" secondItem="wZO-rJ-ubY" secondAttribute="leading" id="6Yk-HS-m1S"/>
+                            <constraint firstItem="4QI-HT-1Nt" firstAttribute="top" secondItem="Jgt-aX-E0q" secondAttribute="bottom" id="7LR-Ew-kTa"/>
+                            <constraint firstItem="Jgt-aX-E0q" firstAttribute="top" secondItem="ULz-kt-2Ml" secondAttribute="bottom" id="Upc-rO-xpP"/>
+                            <constraint firstAttribute="trailing" secondItem="Jgt-aX-E0q" secondAttribute="trailing" id="ecG-Nu-wIZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomTextLabel" destination="XEH-HM-tMJ" id="aJ2-WO-df8"/>
                         <outlet property="imageView" destination="Jgt-aX-E0q" id="6FA-OW-w9x"/>
-                        <outlet property="topTextLabel" destination="byV-fq-TFy" id="n2c-lG-cPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXf-VE-tHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
