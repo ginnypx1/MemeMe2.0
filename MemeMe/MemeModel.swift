@@ -12,8 +12,9 @@ import UIKit
 struct Meme {
     var topText: String?
     var bottomText: String?
+    var fontName: String = "Impact"
     var originalImage: UIImage
     var memedImage: UIImage
 }
 
-var savedMemes: [Meme] = []
+

@@ -28,13 +28,22 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
+    var topText: String = "TOP"
+    var bottomText: String = "BOTTOM"
+    var image: UIImage?
+    var selectedFont: String = "Impact"
+    
     // MARK: - View Control
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // set up the style of textFields
-        memeTextFieldDelegate.setUpTextField(topTextField, label: "TOP")
-        memeTextFieldDelegate.setUpTextField(bottomTextField, label: "BOTTOM")
+        memeTextFieldDelegate.setUpTextField(topTextField, label: topText)
+        memeTextFieldDelegate.setUpTextField(bottomTextField, label: bottomText)
+        // add image if there is one
+        if self.image != nil {
+            imageView.image = image
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,67 +83,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         changeFontLabel.isHidden = show
     }
     
-    // MARK: - Keyboard Notifications
-    
-    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
-        // gets the size of the user's keyboard
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height
-    }
-    
-    func keyboardWillShow(_ notification: Notification) {
-        // shifts the view up the height of the keyboard (only on bottom text field)
-        if bottomTextField.isFirstResponder {
-            view.frame.origin.y -= getKeyboardHeight(notification)
-        } else if topTextField.isFirstResponder {
-            view.frame.origin.y = 0
-        }
-    }
-    
-    func keyboardWillHide(_ notification: Notification) {
-        // shifts the view down to the bottom when keyboard closes
-        view.frame.origin.y = 0
-    }
-    
-    func subscribeToKeyboardNotifications() {
-        // subscribes to keyboard notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    func unsubscribeToKeyboardNotifications() {
-        // unsubscribes to keyboard notifications
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    // MARK: - Image Picker Controller Delegate
-    
-    func createImagePickerController(sourceType: UIImagePickerControllerSourceType) -> UIImagePickerController {
-        // creates and sets properties of a UIImagePickerController
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = sourceType
-        pickerController.allowsEditing = false
-        return pickerController
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // selects an image for the imageView
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = pickedImage
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // dismiss UIImagePickerController on cancel
-        dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Create and Save Meme Image
     
     func generateMemedImage() -> UIImage {
@@ -156,8 +104,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func save(memedImage: UIImage) {
         // saves the current user generated meme
         if let topText = topTextField.text, let bottomText = bottomTextField.text, let originalImage = imageView.image {
-            let meme = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: memedImage)
-            savedMemes.append(meme)
+            // create a meme object
+            let meme = Meme(topText: topText, bottomText: bottomText, fontName: selectedFont, originalImage: originalImage, memedImage: memedImage)
+            // save to saved array of memes
+            let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+            appDelegate.memes.append(meme)
         }
     }
     
@@ -196,20 +147,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    // MARK: - Cancel Image
-    
-    @IBAction func cancel(_ sender: Any) {
-        // resets the meme to a blank canvas
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        imageView.image = nil
-    }
-    
     // MARK: - Change Meme Font
     
     func changeTextFieldFont(to fontName: String) {
         topTextField.font = UIFont(name: fontName, size: 40)!
         bottomTextField.font = UIFont(name: fontName, size: 40)!
+        selectedFont = fontName
     }
 
     @IBAction func changeFont(_ sender: Any) {
@@ -231,6 +174,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             changeTextFieldFont(to: "Impact")
         }
     }
+    
+    // MARK: - Cancel
 
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 

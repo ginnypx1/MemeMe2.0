@@ -37,4 +37,14 @@ class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = NSTextAlignment.center
     }
+    
+    func setLabelFont(text: String, meme: Meme, fontSize: CGFloat) -> NSMutableAttributedString {
+        // sets the label font to match meme font
+        let mutableString = NSMutableAttributedString(string: text, attributes: [
+            NSStrokeColorAttributeName: UIColor.black,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName:UIFont(name: meme.fontName, size: fontSize)!,
+            NSStrokeWidthAttributeName: -3.0])
+        return mutableString
+    }
 }

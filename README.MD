@@ -1,1 +1,1 @@
-MemeMe is a meme-generating app developed as part of the Udacity iOS Development Nanodegree. This is version 1.0.
+MemeMe is a meme-generating app developed as part of the Udacity iOS Development Nanodegree. This is version 2.0, which adds the ability to save memes and access saved through either a table view controller or a collection view controller.
