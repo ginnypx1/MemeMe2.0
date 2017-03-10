@@ -15,8 +15,7 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
 
     // MARK: - Properties
-    
-    let memeTextFieldDelegate = MemeTextFieldDelegate()
+
     var meme: Meme?
     
     // MARK: - Display
@@ -32,6 +31,18 @@ class MemeDetailViewController: UIViewController {
         // Load edit button
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(MemeDetailViewController.openEditor))
         self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    // MARK: - Show and hide the tab bar controller
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     

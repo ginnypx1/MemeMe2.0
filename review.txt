@@ -40,3 +40,23 @@ I have now made this change.
 
 MemeCollectionViewController.swift:
 line 53 - Awesome! The flow layout looks good.
+
+Second Review - 3/9/17:
+
+General: 8/8
+MemeEditor: 13/13
+Sent Memes: 3/4
+- Upon selection, an appropriately sized and scaled Meme Detail View displays the meme.
+
+I again misunderstood the Detail View Controller. It’s my personal pet peeve in this app that when you capture a picture of the meme, the screen doesn’t crop around the picture and so the meme itself has a lot of unnecessary black space around the actual meme. Therefore, when I created my Detail View Controller, I had it recreate the meme from scratch so it would fill the screen and look pretty, instead of simply displaying the saved meme image, which sometimes shrinks to a tiny size in a sea of blackness.
+
+The specifications for the Detail View did ask to display the memed Image, so I now have it display that way in the final app.
+
+Third Review - 3/10/17:
+
+Meets Specifications
+
+MemeDetailViewController:
+line 19 - delete the inclusion of the MemeTextFieldDelegate. This was a holdover from my version where I reproduced the meme in this detail view, and I have removed the unnecessary line of code in the current project.
+
+Suggestion: You should hide/unhide the tab-bar via viewWillAppear and viewWillDisappear. This change has been implemented in the current version of the app.
