@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5736B67E5052B85B2EBBB2 /* Pods_MemeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E1B54F60845A107EDDDE11 /* Pods_MemeMe.framework */; };
 		340721C01E7084350058C9ED /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340721BF1E7084350058C9ED /* MemeTableViewCell.swift */; };
 		3420276F1E6E4C520064AAFF /* MemeEditorKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420276E1E6E4C520064AAFF /* MemeEditorKeyboardExtension.swift */; };
 		342027711E6E4D520064AAFF /* MemeEditorImagePickerDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342027701E6E4D520064AAFF /* MemeEditorImagePickerDelegateExtension.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D366E42173B6B40F8B01F42 /* Pods-MemeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe.release.xcconfig"; sourceTree = "<group>"; };
 		340721BF1E7084350058C9ED /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 		3420276E1E6E4C520064AAFF /* MemeEditorKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorKeyboardExtension.swift; sourceTree = "<group>"; };
 		342027701E6E4D520064AAFF /* MemeEditorImagePickerDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorImagePickerDelegateExtension.swift; sourceTree = "<group>"; };
@@ -46,6 +48,9 @@
 		348AD2571E679E1600E1F936 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 		348AD25D1E68CEFB00E1F936 /* STARWARS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = STARWARS.TTF; sourceTree = "<group>"; };
 		348AD25F1E68DFC500E1F936 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		34A6D9761E8035340095ACED /* MemeMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemeMe-Bridging-Header.h"; sourceTree = "<group>"; };
+		61E1B54F60845A107EDDDE11 /* Pods_MemeMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemeMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		822ED0791A1B9B128AC2F99A /* Pods-MemeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5736B67E5052B85B2EBBB2 /* Pods_MemeMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,8 @@
 			children = (
 				348AD2401E676E3B00E1F936 /* MemeMe */,
 				348AD23F1E676E3B00E1F936 /* Products */,
+				5F70DC39F4058A6919FD02CB /* Pods */,
+				9D083F936F2018A4998649B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,8 +104,26 @@
 				348AD2481E676E3B00E1F936 /* Assets.xcassets */,
 				348AD24A1E676E3B00E1F936 /* LaunchScreen.storyboard */,
 				348AD24D1E676E3B00E1F936 /* Info.plist */,
+				34A6D9761E8035340095ACED /* MemeMe-Bridging-Header.h */,
 			);
 			path = MemeMe;
+			sourceTree = "<group>";
+		};
+		5F70DC39F4058A6919FD02CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				822ED0791A1B9B128AC2F99A /* Pods-MemeMe.debug.xcconfig */,
+				2D366E42173B6B40F8B01F42 /* Pods-MemeMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D083F936F2018A4998649B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61E1B54F60845A107EDDDE11 /* Pods_MemeMe.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 348AD2501E676E3B00E1F936 /* Build configuration list for PBXNativeTarget "MemeMe" */;
 			buildPhases = (
+				4FA0C47128353405C6466C3E /* [CP] Check Pods Manifest.lock */,
 				348AD23A1E676E3B00E1F936 /* Sources */,
 				348AD23B1E676E3B00E1F936 /* Frameworks */,
 				348AD23C1E676E3B00E1F936 /* Resources */,
+				02BBCFA83E41EAEE03621D63 /* [CP] Embed Pods Frameworks */,
+				3605046FC6B367364EDC6A78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +162,7 @@
 					348AD23D1E676E3B00E1F936 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = B875NM54ML;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -169,6 +199,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02BBCFA83E41EAEE03621D63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3605046FC6B367364EDC6A78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FA0C47128353405C6466C3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		348AD23A1E676E3B00E1F936 /* Sources */ = {
@@ -307,26 +385,33 @@
 		};
 		348AD2511E676E3B00E1F936 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 822ED0791A1B9B128AC2F99A /* Pods-MemeMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B875NM54ML;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MemeMe/MemeMe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		348AD2521E676E3B00E1F936 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D366E42173B6B40F8B01F42 /* Pods-MemeMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B875NM54ML;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostbirdgames.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MemeMe/MemeMe-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

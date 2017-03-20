@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerTransitioningDelegate {
+class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerTransitioningDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     // MARK: - Outlets
     
@@ -25,8 +26,19 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // set up custom flow
         fitCollectionFlowToSize(self.view.frame.size)
+        
+        // sets up the empty data set view
+        self.collectionView.emptyDataSetSource = self
+        self.collectionView.emptyDataSetDelegate = self
+    }
+    
+    deinit {
+        // deinits the empty collection view
+        self.collectionView.emptyDataSetSource = nil
+        self.collectionView.emptyDataSetDelegate = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +63,11 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        // displays an image for an empty collection view
+        return UIImage(named: "EmptyCollection")
     }
     
     // MARK: - Collection View

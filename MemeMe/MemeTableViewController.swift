@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class MemeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate {
+class MemeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     // MARK: - Outlets
     
@@ -22,11 +23,34 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
 
     // MARK: - View
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // sets up the empty data set view
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
+    }
+    
+    deinit {
+        // deinits the empty table view
+        self.tableView.emptyDataSetSource = nil
+        self.tableView.emptyDataSetDelegate = nil
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // reload the table data
         self.tableView.reloadData()
     }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        // adds an image to the empty table view
+        return UIImage(named: "EmptyCollection")
+    }
+
     
     // MARK: - Table View Delegate
     
