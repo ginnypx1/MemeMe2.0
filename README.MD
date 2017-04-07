@@ -9,10 +9,10 @@ To check out my version of "MemeMe":
 1. Clone or download my repository:
 ` $ https://github.com/ginnypx1/MemeMe.git `
 
-2. Enter the "On the Map directory":
+2. Enter the "MemeMe" directory:
 ` $ cd /MemeMe-master/ `
 
-3. Open "On the Map" in XCode:
+3. Open "MemeMe" in XCode:
 ` $ open MemeMe.xcodeproj `
 
 ## Instructions
